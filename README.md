@@ -1,175 +1,404 @@
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M3
-# IAPR-3- Module 3 - FoC
-## 5. Implementation of one-dimensional array and multidimensional array.
-## 6. Implementation of string manipulation.
-# Ex.No:11
-  Formulate a C program to convert a given decimal number into its binary equivalent and display it.
+# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
+# IAPR-2- Module 2 - FoC
+## 3. Implementation of programs using conditional statements.
+## 4. Implementation of programs using various control statements.
+# Ex.No:6
+  Build a C program to input a student’s marks in three subjects (Math, Science, and English). Calculate the average marks and determine the grade using nested if-else statements with safe floating-point comparisons based on the following grading criteria:
+    
+  A: 90 and above
+  
+  B: 75 to 89.99
+  
+  C: 50 to 74.99
+  
+  F: below 50
+  
+  The program should display the average marks up to two decimal places and the corresponding grade. 
+  
 # Date : 
 # Aim:
-To formulate a C program to convert a decimal number into its binary equivalent and display it.
+ To build a C program that receives inputs for a student’s marks in three subjects, calculates the average, and determines the grade using nested if-else statements with safe floating-point comparisons.
 # Algorithm:
 ### Step 1:
   Start
 ### Step 2: 
   Include the standard input-output library: #include<stdio.h>.
 ### Step 3: 
-  Declare variables: num (input number), rem (remainder), binary[] (array to store binary digits), and loop counters i and k.
+  Declare float variables math, science, english to store marks of each subject.
 ### Step 4: 
-  Read the decimal number from the user.
+  Declare a float variable average to store the average marks.
 ### Step 5: 
-  Initialize i = 0.
+  Prompt the user to enter marks for Math, Science, and English.
 ### Step 6: 
-  Repeat while num > 0:
-  Divide num by 2 and store the remainder in binary[i].
-  Increment i.
-  Update num = num / 2.
+  Read the input marks.
 ### Step 7: 
-  Display the binary digits in reverse order (from i-1 down to 0).
+  Calculate the average marks using the formula:
+   
+  average=(math + science + english​)/3.0f
 ### Step 8: 
-   Stop
-# Program:
-# Output:
-# Result: 
-Thus, the program was implemented and executed successfully, and the required output was obtained.
+  Check if average is greater than or equal to 90.0f
 
+  If yes, print Grade A.
 
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M3
-# IAPR-3- Module 3 - FoC
-# Ex.No:12
-  Develop a C program to read a matrix and find its saddle point. A saddle point is an element that is the minimum in its row and also the maximum in its column. If such an element exists, display its position and value.
-# Date : 
-# Aim:
-  To develop a C program that inputs a matrix, checks each row for its minimum element, verifies whether that element is also the maximum in its corresponding column, and displays the saddle point and its position if it exists.
-# Algorithm:
-### Step 1:
-  Start
-### Step 2: 
-  Include the standard input-output library: #include<stdio.h>.
-### Step 3: 
- Declare variables i, j, k, m, min, max and a position array pos[2][2].
-### Step 4: 
- Read the order of the square matrix m.
-### Step 5: 
- Declare an m × m matrix and read its elements.
-### Step 6: 
- Display the matrix.
-### Step 7: 
-   For each row `i` from `0` to `m−1`:
-- **Step 7.1:** Set `min` as the first element of the row.  
-- **Step 7.2:** Scan the row to find its minimum element and store its position in `pos[0]`.  
-- **Step 7.3:** Let `j` be the column of this minimum element.  
-- **Step 7.4:** Set `max` as the first element of column `j`.  
-- **Step 7.5:** Scan column `j` to find its maximum element and store its position in `pos[1]`.  
-### Step 8: 
-  Check if the row minimum equals the column maximum:
-- If `min == max` **and their positions match**, then the element is a **saddle point**.
-- Print the saddle point value and its position.
-### Step 9: 
+  Else, proceed to Step 9.  
+### Step 9:
+  Check if average is greater than or equal to 75.0f
+
+  If yes, print Grade B.
+
+  Else, proceed to Step 10.
+### Step 10:
+  Check if average is greater than or equal to 50.0f
+
+  If yes, print Grade C.
+
+  Else, print Grade F.
+### Step 11:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+int main() {
+    float math, science, english, average;
+
+    printf("Enter Math marks: ");
+    scanf("%f", &math);
+
+    printf("Enter Science marks: ");
+    scanf("%f", &science);
+
+    printf("Enter English marks: ");
+    scanf("%f", &english);
+
+    average = (math + science + english) / 3.0;
+
+    printf("\nAverage Marks: %.2f\n", average);
+
+    if (average >= 90.0) {
+        printf("Grade: A\n");
+    } else {
+        if (average >= 75.0) {
+            printf("Grade: B\n");
+        } else {
+            if (average >= 50.0) {
+                printf("Grade: C\n");
+            } else {
+                printf("Grade: F\n");
+            }
+        }
+    }
+
+    return 0;
+}
+```
 # Output:
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/2232004c-c358-4653-8e0e-e38b98aa7ac4" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
-
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M3
-# IAPR-3- Module 3 - FoC
-# Ex.No:13
-  Formulate a C program to reverse a string entered by the user and display the reversed string.
+# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
+# IAPR-2- Module 2 - FoC
+# Ex.No:7
+  Develop a C program to display the multiplication table of a given number (15) up to 10.
 # Date : 
 # Aim:
-  To formulate a C program that reads a string from the user, reverses it, and prints the reversed string.
+ To develop a C program that prints the multiplication table of the number 15 up to 10 using a for loop.
 # Algorithm:
 ### Step 1:
   Start
 ### Step 2: 
   Include the standard input-output library: #include<stdio.h>.
 ### Step 3: 
-  Declare two character arrays: `s` to store the input string and `d` to store the reversed string.
+  Declare an integer variable number and initialize it with 15.
 ### Step 4: 
-  Read the string from the user using `scanf("%[^\n]s", s);`
+  Declare another integer variable i to use as a loop counter.
 ### Step 5: 
-  Find the length of the string `s` by traversing it until the null character `'\0'` is encountered.
+  Use a for loop to iterate from i = 1 to i = 10.
+  
+  In each iteration:
+  
+  a. Multiply number by i.
+  
+  b. Print the result in the format: number x i = result.
 ### Step 6: 
-  Initialize a counter `j` for the reversed string.
-### Step 7: 
-  Copy characters from the end of `s` to the beginning of `d` using a loop until all characters are copied in reverse order.
-### Step 8: 
-  Terminate the reversed string `d` with the null character `'\0'`.
-### Step 9: 
-  Print the reversed string.
-### Step 10: 
+  Stop
+
+# Program:
+```
+#include <stdio.h>
+
+int main() {
+    int number = 15;
+    int i;
+
+    printf("Multiplication Table of %d\n", number);
+
+    for(i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", number, i, number * i);
+    }
+
+    return 0;
+}
+
+```
+# Output:
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/e2996769-422f-4652-8748-84b9b126d492" />
+
+# Result: 
+Thus, the program was implemented and executed successfully, and the required output was obtained.
+
+# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
+# IAPR-2- Module 2 - FoC
+# Ex.No:8
+  Develop a C program to check whether a given number is prime or not.
+# Date : 
+# Aim:
+ To develop a C program that determines whether an input number is a prime number using a while loop.
+# Algorithm:
+### Step 1:
+  Start
+### Step 2: 
+  Include the standard input-output library: #include<stdio.h>.
+### Step 3: 
+  Declare integer variables:
+  
+  n to store the number entered by the user.
+  
+  i to use as a counter (initialize to 2).
+  
+  f as a flag to indicate whether the number is divisible (initialize to 0).
+### Step 4: 
+  Read the value of n from the user.
+### Step 5: 
+  Use a while loop to iterate while i <= n-1:
+  
+  Check if n % i == 0:
+
+  If yes, set f = 1 (number is not prime) and break the loop.
+  
+  Increment i by 1.
+### Step 6: 
+  After the loop:
+  
+  If f == 0, print that the number is prime.
+  
+  Else, print that the number is not prime.
+### Step 7:   
   Stop
 # Program:
+```
+#include <stdio.h>
+
+int main() {
+    int n, i = 2, f = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if (n <= 1) {
+        printf("%d is not a prime number\n", n);
+        return 0;
+    }
+
+    while (i <= n - 1) {
+        if (n % i == 0) {
+            f = 1;
+            break;
+        }
+        i++;
+    }
+
+    if (f == 0)
+        printf("%d is a prime number\n", n);
+    else
+        printf("%d is not a prime number\n", n);
+
+    return 0;
+}
+
+```
 # Output:
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/ec90630d-7ec6-4904-b565-64a971ca8801" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M3
-# IAPR-3- Module 3 - FoC
-# Ex.No:14
-  Formulate a C program to count the frequency of each character in a given string and display the count of every character.
+
+# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
+# IAPR-2- Module 2 - FoC
+# Ex.No:9
+  Generate the C code to display the pattern below.  
+ ``` 
+ 12345  
+ 2   4  
+ 3   3  
+ 4   2  
+ 54321
+ ```
 # Date : 
 # Aim:
-  To formulate a C program that accepts a string from the user and calculates the frequency of each character in the string.
+ To build a C program that prints the required numeric pattern for a given value of n using nested loops.
 # Algorithm:
 ### Step 1:
   Start
 ### Step 2: 
   Include the standard input-output library: #include<stdio.h>.
 ### Step 3: 
-  Declare a character array `s[100]` to store the input string, an integer array `visited[256]` initialized to `0`, and variables `i`, `n`, and `count`.
+  Declare variables i, j, n, and k.
 ### Step 4: 
-  Read the string from the user using `scanf("%[^\n]", s);`
+  Read the value of n from the user.
 ### Step 5: 
-  Calculate the length of the string using `strlen(s)` and store it in `n`.
-### Step 6: 
- For each character `s[i]` in the string (from `i = 0` to `n - 1`):
- - If `visited[(unsigned char)s[i]] == 0` (character not yet counted):  
-  - Initialize `count = 0`.  
-  - Loop through the string again and increment `count` for every occurrence of `s[i]`.  
-  - Print `s[i]` and its count.  
-  - Set `visited[(unsigned char)s[i]] = 1` to mark it as counted.
+  Set i = 1.
+### Step 6:  
+  Repeat the following steps until i > n:
+  
+  Step 6.1: For j from i to n, print j if i == 1 or j == i, otherwise print a space.
+  
+  Step 6.2: Set k = j - 2.
+  
+  Step 6.3: For j from 1 to i - 1, print k if i == n or j == i - 1, otherwise print a space.
+  
+  Step 6.4: Decrease k after each print.
+  
+  Step 6.5: Move to the next line.
+  
 ### Step 7: 
-  Repeat Step 6 for all characters.
+  Increase i and repeat Step 6.
+### Step 8:   
+  Stop
+# Program:
+```
+#include <stdio.h>
+
+int main() {
+    int i, j, n;
+
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++) {
+
+        if (i == 1) {
+            // First row: 1 to n
+            for (j = 1; j <= n; j++)
+                printf("%d", j);
+        }
+        else if (i == n) {
+            // Last row: n to 1
+            for (j = n; j >= 1; j--)
+                printf("%d", j);
+        }
+        else {
+            // Middle rows
+            printf("%d", i);        // left number
+
+            for (j = 1; j <= n - 2; j++)
+                printf(" ");        // spaces
+
+            printf("%d", n - i + 1); // right number
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
+
+```
+# Output:
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/6b118e7b-b504-4b99-9495-59584678c292" />
+
+# Result: 
+  Thus, the program was implemented and executed successfully, and the required output was obtained.
+
+  
+# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
+# IAPR-2- Module 2 - FoC
+# Ex.No:10
+  Generate the C code to display the pattern below.  
+  
+ 0
+ 
+ 7  0  7
+ 
+ 6  7  0  7  6
+ 
+ 5  6  7  0  7  6  5
+ 
+ 4  5  6  7  0  7  6  5  4
+ 
+ 3  4  5  6  7  0  7  6  5  4  3
+ 
+ 2  3  4  5  6  7  0  7  6  5  4  3  2
+ 
+ 1  2  3  4  5  6  7  0  7  6  5  4  3  2  1
+
+# Aim: 
+  To formulate a C program to print a symmetric numeric pattern in which each row contains an increasing sequence of numbers from the row value up to 7, followed by 0 in the center, and then a decreasing sequence of numbers back to the row value.
+# Algorithm:
+### Step 1:
+  Start
+### Step 2: 
+  Include the standard input-output library: #include<stdio.h>.
+### Step 3: 
+  Declare integer variables i and j.
+### Step 4: 
+  Print 0 on the first line.
+### Step 5:
+  Set i = 7.
+### Step 6:
+   Repeat Steps 6.1 to 6.4 while `i >= 1`:
+
+   Step 6.1: For `j = i` to `7`, print `j`.
+
+   Step 6.2: Print `0` in the center.
+
+   Step 6.3: For `j = 7` down to `i`, print `j`.
+
+   Step 6.4: Move to the next line.
+### Step 7:
+  Decrease i by 1 and go back to Step 6.
 ### Step 8:
   Stop
 # Program:
-# Output:
-# Result: 
-Thus, the program was implemented and executed successfully, and the required output was obtained.
+```
+#include <stdio.h>
 
+int main() {
+    int i, j;
 
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M3
-# IAPR-3- Module 3 - FoC
-# Ex.No:15
-  Formulate a C program to remove duplicate words from a given string and display the string with only unique words.
-# Date : 
-# Aim:
-  To formulate a C program to remove duplicate words from a given string and display the string with only unique words.
-# Algorithm:
-### Step 1:
-  Start
-### Step 2: 
-  Include the standard input-output library: #include<stdio.h>.
-### Step 3: 
-  Declare a character array `str` to store the input string and a 2D array `words` to store individual words.
-### Step 4: 
-  Read the input string using `scanf("%[^\n]s", str);`
-### Step 5: 
- Split the string into words:
- - Traverse the string character by character.  
- - When a space is encountered, terminate the current word with `'\0'` and move to the next row in `words`.  
- - Otherwise, copy the character into the current word.
-### Step 6: 
-  Compare each word with all other words to detect duplicates:
-  - If a duplicate is found, mark it by setting the first character to `'\0'`.
-### Step 7: 
-  Print all words that are not marked as duplicates.
-### Step 8: 
-  Stop
-# Program:
+    // Step 4: Print first line
+    printf("0\n\n");
+
+    // Step 5 & 6
+    for(i = 7; i >= 1; i--) {
+
+        // Step 6.1: Increasing part (i to 7)
+        for(j = i; j <= 7; j++) {
+            printf("%d ", j);
+        }
+
+        // Step 6.2: Print center 0
+        printf("0 ");
+
+        // Step 6.3: Decreasing part (7 down to i)
+        for(j = 7; j >= i; j--) {
+            printf("%d ", j);
+        }
+
+        // Step 6.4: Next line
+        printf("\n\n");
+    }
+
+    return 0;
+}
+
+```
 # Output:
-# Result: 
-Thus, the program was implemented and executed successfully, and the required output was obtained.
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/f5ac5bdd-160e-40df-b363-ac64129ecb43" />
+
+# Result:
+  Thus, the program was implemented and executed successfully, and the required output was obtained.
 
